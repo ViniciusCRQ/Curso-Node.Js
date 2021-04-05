@@ -17,6 +17,12 @@ app.get("/sobre", function(req, res){
 
 })
 
+app.get("/ola/:nome/:algumacoisa", function(req, res){
+
+    res.send("<h1>Ola " + req.params.nome + "</h1>")
+
+})
+
 
 // abrir servidor express
 app.listen(8086, function(){
