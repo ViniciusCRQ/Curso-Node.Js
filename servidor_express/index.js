@@ -17,6 +17,8 @@ app.get("/sobre", function(req, res){
 
 })
 
+// Nesse exemplo aqui, foram adicionados os parâmetros nome e algumacoisa, a página só poderá
+// ser aberta com o uso dos dois parametros, EX : localhost:8086/ola/Vinicius/Pedra
 app.get("/ola/:nome/:algumacoisa", function(req, res){
 
     res.send("<h1>Ola " + req.params.nome + "</h1>")
