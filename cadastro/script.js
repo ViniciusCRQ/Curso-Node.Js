@@ -11,11 +11,6 @@ const Sequelize = require('sequelize')
     //body parser
     app.use(bodyParser.urlencoded({extended: false}))
     app.use(bodyParser.json())    
-    // Conexão database MYSQL
-    const sequelize = new Sequelize('teste', 'root', 'Crqmysql1678', {
-        host: "localhost", 
-        dialect: "mysql"
-    })
 
 //rotas
 
