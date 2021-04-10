@@ -1,13 +1,18 @@
-<h1>Posts:</h1> 
-<a href="/cad"><button>Cadastrar</button></a>
+<div class="col-md-12 text-center text-warning mt-1 px-md-5">
+    <h1>Posts:</h1>
+</div> 
+<div class="text-center">
+    <a href="/cad"><button class="btn bg-warning text-white mt-4">Cadastrar novo post</button></a>
+</div>
 {{#each posts}}
 
     <hr>
+    <div class="ml-3">
     <small>{{dataValues.createdAt}}</small>
     <h2>{{dataValues.titulo}}</h2>
-    <hr>
     <p>{{dataValues.conteudo}}</p>
-    <a href="/deletar/{{dataValues.id}}"><button>Deletar</button></a>
+    <a href="/deletar/{{dataValues.id}}"><button class="btn bg-warning text-white mt-4">Deletar</button></a>
+    </div>
     <hr>
 
 {{/each}}
