@@ -55,6 +55,18 @@ const Post = require('./models/Post')
         })
     })
 
+    app.get('/deletar/:id', function(req, res){
+        Post.destroy({where: {'id': req.params.id}}).then(function(){
+            res.render('post-deletado')
+        }).catch(function(erro){
+            res.send('Essa postagem não existe!')
+        })
+    })
+      
+    app.post('/voltar', function(req, res){
+        res.redirect('/')
+    })
+
 // abrir servidor express
 app.listen(8086, function(){
     console.log("Servidor Rodando na url https://localhost:8086")
