@@ -1,18 +1,27 @@
-<div class="col-md-12 text-center text-warning mt-1 px-md-5">
-    <h1>Posts:</h1>
-</div> 
-<div class="text-center">
-    <a href="/cad"><button class="btn bg-warning text-white mt-4">Cadastrar novo post</button></a>
-</div>
+<table class="table table-hover table-bordered">
+    <thead>
+        <tr class="text-center ">
+            <th colspan="4"><h1>Posts</h1></th>
+        </tr>
+        <tr>
+            <th scope="col" class="w-25 p-3">Título</th>
+            <th scope="col" >Conteúdo</th>
+            <th scope="col" class="w-25 p-3">Data de criação</th>
+            <th scope="col" >Opções</th>
+        </tr>
+    </thead>
+    <tbody>
 {{#each posts}}
-
-    <hr>
-    <div class="ml-3">
-    <small>{{dataValues.createdAt}}</small>
-    <h2>{{dataValues.titulo}}</h2>
-    <p>{{dataValues.conteudo}}</p>
-    <a href="/deletar/{{dataValues.id}}"><button class="btn bg-warning text-white mt-4">Deletar</button></a>
-    </div>
-    <hr>
-
+    <tr>
+        <td class="w-25 p-3"><h4>{{dataValues.titulo}}</h4></td>
+        <td><p>{{dataValues.conteudo}}</p></td>
+        <td><small>{{dataValues.createdAt}}</small></td>
+        <td><a href="/deletar/{{dataValues.id}}"><button class="btn bg-secondary text-white mt-4">Deletar</button></a></td>
+    </tr>
 {{/each}}
+
+    </tbody>
+    </table>
+<div class="text-center">
+    <a href="/cad"><button class="btn bg-secondary text-white mt-4">Cadastrar novo post</button></a>
+</div>
