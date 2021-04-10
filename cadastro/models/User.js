@@ -15,4 +15,4 @@ const User = db.sequelize.define('user', {
     }
 })
 
-module.exports = User
+module.exports = User 

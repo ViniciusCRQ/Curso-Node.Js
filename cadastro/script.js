@@ -3,12 +3,15 @@ const app = express()
 const handlebars = require('../node_modules/express-handlebars')
 const bodyParser = require('../node_modules/body-parser')
 const Post = require('./models/Post')
-const User = require('./models/User')
+//const User = require('./models/User')
 
 
 // Config
     //  Template Engine
-        app.engine('handlebars', handlebars({defaultLayout : 'main'}))
+        app.engine('handlebars', handlebars({
+            defaultLayout : 'main',
+            allowProtoPropertiesByDefault: true
+        }))
         app.set('view engine', 'handlebars')
     //body parser
         app.use(bodyParser.urlencoded({extended: false}))
@@ -16,7 +19,9 @@ const User = require('./models/User')
 
 //rotas
     app.get('/', function(req, res){
-        res.render('home')
+        Post.findAll({order: [['id', 'ASC']]}).then(function(posts){
+            res.render('home', {posts: posts})
+        })
     })
     app.get('/cad', function(req, res){
         res.render('formulario')
@@ -33,7 +38,7 @@ const User = require('./models/User')
         })
     })
 
-    app.get('/cadastrar', function(req, res){
+   app.get('/cadastrar', function(req, res){
         res.render('cadastrouser')
     })
 

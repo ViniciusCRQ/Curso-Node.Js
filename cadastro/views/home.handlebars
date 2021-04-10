@@ -1,1 +1,10 @@
-<h1>Olá</h1>
+<h1>Posts:</h1> 
+{{#each posts}}
+
+    <hr>
+    <small>{{dataValues.createdAt}}</small>
+    <h2>{{dataValues.titulo}}</h2>
+    <hr>
+    <p>{{dataValues.conteudo}}</p>
+    <hr>
+{{/each}}
