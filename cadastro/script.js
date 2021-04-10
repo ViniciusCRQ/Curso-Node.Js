@@ -15,6 +15,9 @@ const User = require('./models/User')
         app.use(bodyParser.json())    
 
 //rotas
+    app.get('/', function(req, res){
+        res.render('home')
+    })
     app.get('/cad', function(req, res){
         res.render('formulario')
     })
@@ -24,7 +27,7 @@ const User = require('./models/User')
             titulo : req.body.titulo,
             conteudo : req.body.conteudo
         }).then(function(){// serve para ver o processo ocorreu com sucesso
-            res.send('Post criado com sucesso!')
+            res.redirect('/')
         }).catch(function(erro){
             res.send('Erro ao enviar o post!' + erro)
         })
