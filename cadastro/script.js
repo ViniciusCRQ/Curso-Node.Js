@@ -67,12 +67,6 @@ const Post = require('./models/Post')
         res.redirect('/')
     })
 
-    app.post('/search', function(req, res){
-        Post.findAll({order: [['titulo', 'ASC']]}).then(function(posts){
-            res.render('searched', {posts: posts})
-        })
-    })
-
 // abrir servidor express
 app.listen(8086, function(){
     console.log("Servidor Rodando na url https://localhost:8086")

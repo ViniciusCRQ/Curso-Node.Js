@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-white">
-  <a class="navbar-brand" href="/"><h1 class="font-weight-light bg-white">#<strong>POSTS</strong></h1></a>
+  <a class="navbar-brand" href="/"><h1 class="font-weight-light bg-light">#<strong>POSTS</strong></h1></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -13,14 +13,11 @@
         <a class="nav-link" href="/cad">Cadastrar</a>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
   </div>
 </nav>
 <table class="table table-hover table-bordered">
         <tr>
+            <th scope="col" class="w-25 p-3">ID</th>
             <th scope="col" class="w-25 p-3">Título</th>
             <th scope="col" >Conteúdo</th>
             <th scope="col" class="w-25 p-3">Data de criação</th>
@@ -30,10 +27,12 @@
     <tbody>
 {{#each posts}}
     <tr>
+        <td>#{{dataValues.id}}</td>
         <td class="w-25 p-3 text-success"><h4>{{dataValues.titulo}}</h4></td>
         <td><p>{{dataValues.conteudo}}</p></td>
         <td><small>{{dataValues.createdAt}}</small></td>
-        <td><a href="/deletar/{{dataValues.id}}"><button class="btn btn-outline-success my-2 my-sm-0" type="submit">Deletar</button></a></td>
+        <td><a href="/deletar/{{dataValues.id}}"><button class="btn btn-outline-success my-2 my-sm-0" type="submit">Deletar</button></a>
+        <a href="/edit/{{dataValues.id}}"><button class="btn btn-outline-success my-2 my-sm-0 ml-2" type="submit">Editar</button></a></td>
     </tr>
 {{/each}}
 
