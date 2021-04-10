@@ -1,8 +1,25 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-white">
+  <a class="navbar-brand" href="/"><h1 class="font-weight-light bg-white">#<strong>POSTS</strong></h1></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item ml-3">
+        <a class="nav-link" href="/">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/cad">Cadastrar</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
 <table class="table table-hover table-bordered">
-    <thead>
-        <tr class="text-center ">
-            <th colspan="4"><h1>Posts</h1></th>
-        </tr>
         <tr>
             <th scope="col" class="w-25 p-3">Título</th>
             <th scope="col" >Conteúdo</th>
@@ -13,15 +30,15 @@
     <tbody>
 {{#each posts}}
     <tr>
-        <td class="w-25 p-3"><h4>{{dataValues.titulo}}</h4></td>
+        <td class="w-25 p-3 text-success"><h4>{{dataValues.titulo}}</h4></td>
         <td><p>{{dataValues.conteudo}}</p></td>
         <td><small>{{dataValues.createdAt}}</small></td>
-        <td><a href="/deletar/{{dataValues.id}}"><button class="btn bg-secondary text-white mt-4">Deletar</button></a></td>
+        <td><a href="/deletar/{{dataValues.id}}"><button class="btn btn-outline-success my-2 my-sm-0" type="submit">Deletar</button></a></td>
     </tr>
 {{/each}}
 
     </tbody>
     </table>
 <div class="text-center">
-    <a href="/cad"><button class="btn bg-secondary text-white mt-4">Cadastrar novo post</button></a>
+    <a href="/cad"><button class="btn bg-success text-white mt-4">Cadastrar novo post</button></a>
 </div>
