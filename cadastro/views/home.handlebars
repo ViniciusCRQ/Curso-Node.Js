@@ -28,11 +28,15 @@
 {{#each posts}}
     <tr>
         <td>#{{dataValues.id}}</td>
-        <td class="w-25 p-3 text-success"><h4>{{dataValues.titulo}}</h4></td>
+        <td class="w-25 p-3 text-success"><h5>{{dataValues.titulo}}</h5></td>
         <td><p>{{dataValues.conteudo}}</p></td>
         <td><small>{{dataValues.createdAt}}</small></td>
         <td><a href="/deletar/{{dataValues.id}}"><button class="btn btn-outline-success my-2 my-sm-0" type="submit">Deletar</button></a>
-        <a href="/edit/{{dataValues.id}}"><button class="btn btn-outline-success my-2 my-sm-0 ml-2" type="submit">Editar</button></a></td>
+         <form class="form-action" action="/update/{{dataValues.id}}" method="get">
+            <button type="submit" class="action-edit">
+              <i class="material-icons">edit</i>
+            </button>
+          </form></td>
     </tr>
 {{/each}}
 
