@@ -46,6 +46,7 @@ const Post = require('./models/Post')
         })
     })
       
+
       
 // abrir servidor express
 app.listen(8086, function(){
